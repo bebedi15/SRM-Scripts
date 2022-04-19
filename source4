@@ -25,7 +25,7 @@ LoginTitle.Text = "Outdated"
 LoginTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 LoginTitle.TextSize = 51.000
 
-Copydiscordlink.Name = "Copy discord link"
+Copydiscordlink.Name = "Copy New Script"
 Copydiscordlink.Parent = MainLogin
 Copydiscordlink.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
 Copydiscordlink.Position = UDim2.new(0.0872483179, 0, 0.655300617, 0)
@@ -35,7 +35,7 @@ Copydiscordlink.Text = "Copy Discord Link"
 Copydiscordlink.TextColor3 = Color3.fromRGB(255, 255, 255)
 Copydiscordlink.TextSize = 27.000
 Copydiscordlink.MouseButton1Down:Connect(function()
-	setclipboard("discord.gg/nVsFQFDVvX")
+	setclipboard("loadstring(game:HttpGet("https://raw.githubusercontent.com/bebedi15/Speed-Run-Simulator/main/Protected%20(4).lua"))()")
 end)
 
 Title1.Name = "Title 1"
