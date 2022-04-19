@@ -1,412 +1,57 @@
-getgenv().collectOrbsToggle = false
-getgenv().autoRebirth = false
-getgenv().autoBeachBallva = false
-getgenv().autoRing = false
+local ScreenGui = Instance.new("ScreenGui")
+local MainLogin = Instance.new("Frame")
+local LoginTitle = Instance.new("TextLabel")
+local Copydiscordlink = Instance.new("TextButton")
+local Title1 = Instance.new("TextLabel")
+local Title2 = Instance.new("TextLabel")
 
 
-function autoOrb()
-    spawn(function()
-        local playerHead = game.Players.LocalPlayer.Character.Head
-        while wait(0.1) do
-            if not getgenv().collectOrbsToggle then break end
-            for i, v in pairs(game:GetService("Workspace").GameAssets.GlobalAssets.OrbSpawns:GetDescendants()) do
-                if v.Name == "TouchInterest" and v.Parent then
-                    firetouchinterest(playerHead, v.Parent, 0)
-                    wait(0.1)
-                    break;
-                end
-            end
-        end
-    end)
-end
+ScreenGui.Parent = game.CoreGui
 
-function autoBeachBall()
-    spawn(function()
-        local playerHead = game.Players.LocalPlayer.Character.Head
-        while wait(0.1) do
-            if not getgenv().autoBeachBallva then break end
-            for i, v in pairs(game:GetService("Workspace").GameAssets.GlobalAssets.EventAssets.Summer.Collectibles:GetDescendants()) do
-                if v.Name == "TouchInterest"  then
-                    firetouchinterest(playerHead, v.Parent, 0)
-                    wait(0.1)
-                    break;
-                end
-            end
-        end
-    end)
-end
+MainLogin.Name = "Main Login"
+MainLogin.Parent = ScreenGui
+MainLogin.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+MainLogin.Position = UDim2.new(0.384038121, 0, 0.256441712, 0)
+MainLogin.Size = UDim2.new(0, 298, 0, 226)
 
-function autoCollect()
-    spawn(function ()
-        while wait(1.0) do
-            if getgenv().collectOrbsToggle == true then
-                game:GetService("ReplicatedStorage").Remotes.AddSpeed:FireServer()
-                wait(1.0)
-            else
-                print('Auto Collect Stopped')
-                break
-            end
-        end
-        
-    end)
-    
-end
+LoginTitle.Name = "Login Title"
+LoginTitle.Parent = MainLogin
+LoginTitle.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+LoginTitle.Size = UDim2.new(0, 298, 0, 60)
+LoginTitle.Font = Enum.Font.SourceSansBold
+LoginTitle.Text = "Outdated"
+LoginTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+LoginTitle.TextSize = 51.000
 
-
-function autoRebirthva()
-    spawn(function ()
-        while wait(7.0) do
-            if getgenv().autoRebirth == true then
-                game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer()
-                wait(7.0)
-            else
-                print('Auto Rebirth Stopped')
-                break
-            end
-        end
-        
-    end)
-    
-end
-
-
-
-local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
-
-local w = library:CreateWindow("Farming")
-
-local z = library:CreateWindow("Teleport")
-
-local t = library:CreateWindow("Buy")
-
-local y = library:CreateWindow("Race")
-
-local n = library:CreateWindow("Other")
-
-local x = library:CreateWindow("Credits")
-
-local b = w:CreateFolder("Farming")
-
-local e = t:CreateFolder("Egg")
-
-local c = z:CreateFolder("Teleport")
-
-local u = x:CreateFolder("Credits")
-
-local d = n:CreateFolder("Other")
-
-local i = y:CreateFolder("Race")
-
-u:Label("Credit:",{
-    TextSize = 17; -- Self Explaining
-    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
-    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
-    
-}) 
-
-u:Label("infantry,[<3]",{
-    TextSize = 15; -- Self Explaining
-    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
-    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
-    
-}) 
-
-u:Label("https://discord.gg/G9NVz4Je3W",{
-    TextSize = 13; -- Self Explaining
-    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
-    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
-    
-}) 
-
-u:Label("Script Made By:",{
-    TextSize = 17; -- Self Explaining
-    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
-    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
-    
-}) 
-
-u:Label("Bebedi#9960",{
-    TextSize = 16; -- Self Explaining
-    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
-    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
-    
-}) 
-
-e:Label("To buy Egg 2 you must have at least 2 Rebirths",{
-    TextSize = 13; -- Self Explaining
-    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
-    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
-    
-}) 
-
-e:Label("To buy Egg 3 you must have at least 3 Rebirths",{
-    TextSize = 13; -- Self Explaining
-    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
-    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
-    
-}) 
-
-e:Label("There is no animation when you buy it! See your inventory",{
-    TextSize = 13; -- Self Explaining
-    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
-    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
-    
-}) 
-
-
-b:Toggle("Auto Orb",function(bool)
-    getgenv().collectOrbsToggle = bool
-    print("Auto Orb is:" , bool);
-    if bool then
-        autoCollect()
-        autoOrb()
-    end
+Copydiscordlink.Name = "Copy discord link"
+Copydiscordlink.Parent = MainLogin
+Copydiscordlink.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+Copydiscordlink.Position = UDim2.new(0.0872483179, 0, 0.655300617, 0)
+Copydiscordlink.Size = UDim2.new(0, 246, 0, 49)
+Copydiscordlink.Font = Enum.Font.SourceSansBold
+Copydiscordlink.Text = "Copy Discord Link"
+Copydiscordlink.TextColor3 = Color3.fromRGB(255, 255, 255)
+Copydiscordlink.TextSize = 27.000
+Copydiscordlink.MouseButton1Down:Connect(function()
+	setclipboard("discord.gg/nVsFQFDVvX")
 end)
 
+Title1.Name = "Title 1"
+Title1.Parent = MainLogin
+Title1.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+Title1.Position = UDim2.new(0, 0, 0.250478983, 0)
+Title1.Size = UDim2.new(0, 298, 0, 32)
+Title1.Font = Enum.Font.Ubuntu
+Title1.Text = "You have a Outdated version of the Script"
+Title1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title1.TextSize = 17.000
 
-b:Toggle("Auto BeachBall",function(bool)
-    getgenv().autoBeachBallva = bool
-    print("Auto Beach is:" , bool);
-    if bool then
-        autoBeachBall()
-    end
-end)
-
-
-b:Toggle("Auto Rebirth",function(bool)
-    getgenv().autoRebirth = bool
-    print("Auto Rebirth is:" , bool);
-    if bool then
-        autoRebirthva()
-    end
-end)
-
-b:Button("Rebirth",function()
-    game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer()
-end)
-
-e:Button("Buy Egg 1",function()
-    local args = {[1] = "EggOne",[2] = false}
-    game:GetService("ReplicatedStorage").Remotes.CanBuyEgg:InvokeServer(unpack(args))
-end)
-
-e:Button("Buy Egg 2",function()
-    local args = {[1] = "EggTwo",[2] = false}
-    game:GetService("ReplicatedStorage").Remotes.CanBuyEgg:InvokeServer(unpack(args))
-end)
-
-e:Button("Buy Egg 3",function()
-    local args = {[1] = "EggThree",[2] = false}
-    game:GetService("ReplicatedStorage").Remotes.CanBuyEgg:InvokeServer(unpack(args))
-end)
-
-d:Button("Inf Jump",function()
-    local Player = game:GetService'Players'.LocalPlayer;
-local UIS = game:GetService'UserInputService';
-
-_G.JumpHeight = 50;
- 
-function Action(Object, Function) if Object ~= nil then Function(Object); end end
- 
-UIS.InputBegan:connect(function(UserInput)
-    if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
-        Action(Player.Character.Humanoid, function(self)
-            if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
-                Action(self.Parent.HumanoidRootPart, function(self)
-                    self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
-                end)
-            end
-        end)
-    end
-end)
-end)
-
-i:Button("Instant win",function()
-    local playerHead = game.Players.LocalPlayer.Character.Head
-    for i, v in pairs(game:GetService("Workspace").GameAssets.Races.Grassy.Course.Finish.RaceEnd:GetDescendants()) do
-        if v.Name == "TouchInterest" then
-            firetouchinterest(playerHead, v.Parent, 0)
-            wait(0.1)
-            firetouchinterest(playerHead, v.Parent, 1)
-        end
-    end
-end)
-
-
-c:Button("Desert",function()
-    function teleportTO(placeCFrame)
-        local plyr = game.Players.LocalPlayer
-        if plyr.Character then
-            plyr.Character.HumanoidRootPart.CFrame = placeCFrame
-        end
-    end
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Desert.Map.Floor.Baseplate.CFrame)
-    wait(0.3)
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Desert.Map.Floor.Baseplate.CFrame)
-end)
-
-c:Button("Jungle",function()
-    function teleportTO(placeCFrame)
-        local plyr = game.Players.LocalPlayer
-        if plyr.Character then
-            plyr.Character.HumanoidRootPart.CFrame = placeCFrame
-        end
-    end
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Jungle.Map.Floor.Baseplate.CFrame)
-    wait(0.3)
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Jungle.Map.Floor.Baseplate.CFrame)
-end)
-
-c:Button("Iceland",function()
-    function teleportTO(placeCFrame)
-        local plyr = game.Players.LocalPlayer
-        if plyr.Character then
-            plyr.Character.HumanoidRootPart.CFrame = placeCFrame
-        end
-    end
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Iceland.Map.Floor.Baseplate.CFrame)
-    wait(0.3)
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Iceland.Map.Floor.Baseplate.CFrame)
-end)
-
-c:Button("Lavaland",function()
-    function teleportTO(placeCFrame)
-        local plyr = game.Players.LocalPlayer
-        if plyr.Character then
-            plyr.Character.HumanoidRootPart.CFrame = placeCFrame
-        end
-    end
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Lavaland.Map.Floor.Baseplate.CFrame)
-    wait(0.3)
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Lavaland.Map.Floor.Baseplate.CFrame)
-end)
-
-c:Button("Graveyard",function()
-    function teleportTO(placeCFrame)
-        local plyr = game.Players.LocalPlayer
-        if plyr.Character then
-            plyr.Character.HumanoidRootPart.CFrame = placeCFrame
-        end
-    end
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Graveyard.Map.Floor.Baseplate.CFrame)
-    wait(0.3)
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Graveyard.Map.Floor.Baseplate.CFrame)
-end)
-
-c:Button("Heaven",function()
-    function teleportTO(placeCFrame)
-        local plyr = game.Players.LocalPlayer
-        if plyr.Character then
-            plyr.Character.HumanoidRootPart.CFrame = placeCFrame
-        end
-    end
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Heaven.Map.Floor.Baseplate.CFrame)
-    wait(0.3)
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Heaven.Map.Floor.Baseplate.CFrame)
-end)
-
-c:Button("Candyland",function()
-    function teleportTO(placeCFrame)
-        local plyr = game.Players.LocalPlayer
-        if plyr.Character then
-            plyr.Character.HumanoidRootPart.CFrame = placeCFrame
-        end
-    end
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Candyland.Map.Floor.Baseplate.CFrame)
-    wait(0.3)
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Candyland.Map.Floor.Baseplate.CFrame)
-end)
-
-c:Button("Moon",function()
-    function teleportTO(placeCFrame)
-        local plyr = game.Players.LocalPlayer
-        if plyr.Character then
-            plyr.Character.HumanoidRootPart.CFrame = placeCFrame
-        end
-    end
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Moon.Map.Floor.Baseplate.CFrame)
-    wait(0.3)
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Moon.Map.Floor.Baseplate.CFrame)
-end)
-
-c:Button("Ocean",function()
-    function teleportTO(placeCFrame)
-        local plyr = game.Players.LocalPlayer
-        if plyr.Character then
-            plyr.Character.HumanoidRootPart.CFrame = placeCFrame
-        end
-    end
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Ocean.Map.Floor.Baseplate.CFrame)
-    wait(0.3)
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Ocean.Map.Floor.Baseplate.CFrame)
-end)
-
-c:Button("AdventureTime",function()
-    function teleportTO(placeCFrame)
-        local plyr = game.Players.LocalPlayer
-        if plyr.Character then
-            plyr.Character.HumanoidRootPart.CFrame = placeCFrame
-        end
-    end
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.AdventureTime.Map.Floor.Baseplate.CFrame)
-    wait(0.3)
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.AdventureTime.Map.Floor.Baseplate.CFrame)
-end)
-
-c:Button("Medieval",function()
-    function teleportTO(placeCFrame)
-        local plyr = game.Players.LocalPlayer
-        if plyr.Character then
-            plyr.Character.HumanoidRootPart.CFrame = placeCFrame
-        end
-    end
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Medieval.Map.Environment["Statue-1"].idkhowtocode.Head.CFrame)
-    wait(0.3)
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.Medieval.Map.Environment["Statue-1"].idkhowtocode.Head.CFrame)
-end)
-
-c:Button("Wild West",function()
-    function teleportTO(placeCFrame)
-        local plyr = game.Players.LocalPlayer
-        if plyr.Character then
-            plyr.Character.HumanoidRootPart.CFrame = placeCFrame
-        end
-    end
-    teleportTO(game:GetService("Workspace").GameAssets.Maps["Wild West"].Map.Floor.MainBaseplate.CFrame)
-    wait(0.3)
-    teleportTO(game:GetService("Workspace").GameAssets.Maps["Wild West"].Map.Floor.MainBaseplate.CFrame)
-end)
-
-c:Button("VIP",function()
-    function teleportTO(placeCFrame)
-        local plyr = game.Players.LocalPlayer
-        if plyr.Character then
-            plyr.Character.HumanoidRootPart.CFrame = placeCFrame
-        end
-    end
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.VIP.Map.Floor.Baseplate.CFrame)
-    wait(0.3)
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.VIP.Map.Floor.Baseplate.CFrame)
-end)
-
-c:Button("SkyIslands",function()
-    function teleportTO(placeCFrame)
-        local plyr = game.Players.LocalPlayer
-        if plyr.Character then
-            plyr.Character.HumanoidRootPart.CFrame = placeCFrame
-        end
-    end
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.SkyIslands.Map.Interactables.EggDispensers.SuperSizeEggDispenser.Display.Gryphon.BoundingBox.CFrame)
-    wait(0.3)
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.SkyIslands.Map.Interactables.EggDispensers.SuperSizeEggDispenser.Display.Gryphon.BoundingBox.CFrame)
-end)
-
-c:Button("Spawn",function()
-    function teleportTO(placeCFrame)
-        local plyr = game.Players.LocalPlayer
-        if plyr.Character then
-            plyr.Character.HumanoidRootPart.CFrame = placeCFrame
-        end
-    end
-    teleportTO(game:GetService("Workspace").GameAssets.Maps.VIP.Map.Interactables.Portals.HomePortal.Portal.Frame.Spawn.CFrame)
-end)
+Title2.Name = "Title 2"
+Title2.Parent = MainLogin
+Title2.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+Title2.Position = UDim2.new(0, 0, 0.425873548, 0)
+Title2.Size = UDim2.new(0, 298, 0, 32)
+Title2.Font = Enum.Font.Ubuntu
+Title2.Text = "New Version in the Discord Server"
+Title2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title2.TextSize = 17.000
