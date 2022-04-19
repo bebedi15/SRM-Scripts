@@ -13,6 +13,8 @@ MainLogin.Parent = ScreenGui
 MainLogin.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
 MainLogin.Position = UDim2.new(0.384038121, 0, 0.256441712, 0)
 MainLogin.Size = UDim2.new(0, 298, 0, 226)
+MainLogin.Active = true
+MainLogin.Draggable = true
 
 LoginTitle.Name = "Login Title"
 LoginTitle.Parent = MainLogin
