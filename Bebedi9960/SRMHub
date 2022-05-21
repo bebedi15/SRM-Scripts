@@ -23,6 +23,10 @@ else
                         else
                             if game.PlaceId == 7603178367 then
                                 loadstring(game:HttpGet("https://raw.githubusercontent.com/bebedi15/SRM-Scripts/main/Bebedi9960/ChipotleBurritoBuilder"))()
+                            else
+                                if game.PlaceId == 5024793931 then
+                                    loadstring(game:HttpGet"https://raw.githubusercontent.com/bebedi15/SRM-Scripts/main/Bebedi9960/ZeppelinWars")()
+                                end
                             end
                         end
                     end
