@@ -29,6 +29,10 @@ else
                                 else
                                     if game.PlaceId == 6875469709 then
                                         loadstring(game:HttpGet"https://raw.githubusercontent.com/bebedi15/SRM-Scripts/main/Bebedi9960/strongestpunchsim.lua")()
+                                    else
+                                        if game.PlaceId == 6459707978 then
+                                            loadstring(game:HttpGet"https://raw.githubusercontent.com/bebedi15/SRM-Scripts/main/Bebedi9960/deliverysim")()
+                                        end
                                     end
                                 end
                             end
