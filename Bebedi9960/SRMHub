@@ -26,6 +26,10 @@ else
                             else
                                 if game.PlaceId == 5024793931 then
                                     loadstring(game:HttpGet"https://raw.githubusercontent.com/bebedi15/SRM-Scripts/main/Bebedi9960/ZeppelinWars")()
+                                else
+                                    if game.PlaceId == 6875469709 then
+                                        loadstring(game:HttpGet"https://raw.githubusercontent.com/bebedi15/SRM-Scripts/main/Bebedi9960/strongestpunchsim.lua")()
+                                    end
                                 end
                             end
                         end
