@@ -36,7 +36,7 @@ else
                                             if game.PlaceId == 9203864304 then
                                                 loadstring(game:HttpGet"https://raw.githubusercontent.com/bebedi15/SRM-Scripts/main/Bebedi9960/raiseafloppa.lua")()
                                             else
-                                                if game.PlaceId == 9203864304 then
+                                                if game.PlaceId == 9072679513 then
                                                     loadstring(game:HttpGet"https://raw.githubusercontent.com/bebedi15/SRM-Scripts/main/Bebedi9960/Anime%20Impact%20Simulator.lua")()
                                                 else
                                                     local notify = loadstring(game:HttpGet(('https://pastebin.com/raw/ipvW4CJ5'),true))()
