@@ -42,8 +42,12 @@ else
                                                     if game.PlaceId == 9488143445 then
                                                         loadstring(game:HttpGet"https://raw.githubusercontent.com/bebedi15/SRM-Scripts/main/Bebedi9960/RaiseABloppa.lua")()
                                                     else
-                                                        local notify = loadstring(game:HttpGet(('https://pastebin.com/raw/ipvW4CJ5'),true))()
-                                                        notify.prompt('SRM Hub', "Gane Is not Supported")
+                                                        if game.PlaceId == 8750997647 then
+                                                            loadstring(game:HttpGet"https://raw.githubusercontent.com/bebedi15/SRM-Scripts/main/Bebedi9960/TappingLegends.lua")()
+                                                        else
+                                                            local notify = loadstring(game:HttpGet(('https://pastebin.com/raw/ipvW4CJ5'),true))()
+                                                            notify.prompt('SRM Hub', "Gane Is not Supported")
+                                                        end
                                                     end
                                                 end
                                             end
