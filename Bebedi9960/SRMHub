@@ -57,8 +57,12 @@ else
                                                                         if game.PlaceId == 7830918930 then
                                                                             loadstring(game:HttpGet"https://raw.githubusercontent.com/bebedi15/SRM-Scripts/main/Bebedi9960/GucciTown.lua")()
                                                                         else
-                                                                            local notify = loadstring(game:HttpGet(('https://pastebin.com/raw/ipvW4CJ5'),true))()
-                                                                            notify.prompt('SRM Hub', "Game is not Supported")
+                                                                            if game.PlaceId == 9544620334 then
+                                                                                loadstring(game:HttpGet"https://raw.githubusercontent.com/bebedi15/SRM-Scripts/main/Bebedi9960/FindtheTurtles.lua")()
+                                                                            else
+                                                                                local notify = loadstring(game:HttpGet(('https://pastebin.com/raw/ipvW4CJ5'),true))()
+                                                                                notify.prompt('SRM Hub', "Game is not Supported")
+                                                                            end
                                                                         end
                                                                     end
                                                                 end
